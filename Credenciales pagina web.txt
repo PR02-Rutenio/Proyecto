@@ -1,0 +1,6 @@
+---Usuario---Contraseña---Respuesta a la pregunta de seguridad
+
+irene@gmail.com---asdASD123---Draco
+adler@gmail.com---987654321---Isti
+david@gmail.com---zxcZXC123---Pitus
+javier@gmail.com---wsxWSX123---Flash
