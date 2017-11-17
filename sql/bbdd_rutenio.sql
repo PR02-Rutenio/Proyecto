@@ -4,7 +4,7 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
--- CREATE DATABASE bbdd_rutenio;
+CREATE DATABASE bbdd_rutenio;
 
 
 -- CREATE USER 'admin'@'%' IDENTIFIED VIA mysql_native_password USING '***';GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 9999 MAX_CONNECTIONS_PER_HOUR 9999 MAX_UPDATES_PER_HOUR 9999 MAX_USER_CONNECTIONS 9997;GRANT ALL PRIVILEGES ON `admin\_%`.* TO 'admin'@'%';GRANT ALL PRIVILEGES ON `bbdd_rutenio`.* TO 'admin'@'%';
@@ -21,6 +21,7 @@ CREATE TABLE `recurso` (
 	`rec_img` varchar(25) NULL,
 	`rec_incidencia` text COLLATE utf8_spanish_ci NULL,
 	`rec_incidencia_estado` boolean NOT NULL,
+	`rec_usado` int (4) NOT NULL,
 	`usu_id` int (4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -47,22 +48,22 @@ INSERT INTO `usuario` (`usu_id`, `usu_nombre`, `usu_apellido`, `usu_correo`, `us
 (9, 'Admin', 'Admin', 'admin@gmail.com', '1234', 'Lumi');
 
 
-INSERT INTO `recurso` (`rec_id`, `rec_tipo`, `rec_nombre`, `rec_disponibilidad`, `rec_fecha`, `rec_descripcion`, `rec_img`, `rec_incidencia`, `rec_incidencia_estado`, `usu_id`) VALUES
-(1, 'Aula de teoría', 'Aula de teoría con proyector', '1', '2017-11-10 14:10:48', '', 'imagenes/bici5.png', '', '0', 1),
-(2, 'Aula de teoría', 'Aula de teoría con proyector', '1', '2017-11-10 14:10:48', '', 'imagenes/bici5.png', '', '0', 1),
-(3, 'Aula de teoría', 'Aula de teoría sin proyector', '1', '2017-11-10 14:10:48', '', 'imagenes/bici5.png', '', '0', 1),
-(4, 'Aula de informática', 'Aula de informática', '1', '2017-11-10 14:10:48', '', 'imagenes/bici5.png', '', '0', 1),
-(5, 'Aula de informática', 'Aula de informática', '1', '2017-11-10 14:10:48', '', 'imagenes/bici5.png', '', '0', 1),
-(6, 'Sala', 'Despacho para entrevistas', '1', '2017-11-10 14:10:48', '', 'imagenes/bici5.png', '', '0', 1),
-(7, 'Sala', 'Despacho para entrevistas', '1', '2017-11-10 14:10:48', '', 'imagenes/bici5.png', '', '0', 1),
-(8, 'Sala', 'Sala de reuniones', '1', '2017-11-10 14:10:48', '', 'imagenes/bici5.png', '', '0', 1),
-(9, 'Proyector', 'Proyector', '1', '2017-11-10 14:10:48', '', 'imagenes/proyector.png', '', '0', 1),
-(10, 'Carro de portatiles', 'Carro de portatiles', '1', '2017-11-10 14:10:48', '', 'imagenes/bici5.png', '', '0', 1),
-(11, 'Portátil', 'Portátil', '1', '2017-11-10 14:10:48', '', 'imagenes/portatil.png', '', '0', 1),
-(12, 'Portátil', 'Portátil', '1', '2017-11-10 14:10:48', '', 'imagenes/portatil2.png', '', '0', 1),
-(13, 'Portátil', 'Portátil', '1', '2017-11-10 14:10:48', '', 'imagenes/portatil3.png', '', '0', 1),
-(14, 'Móvil', 'Móvil', '1', '2017-11-10 14:10:48', '', 'imagenes/smartphone.png', '', '0', 1),
-(15, 'Móvil', 'Móvil', '1', '2017-11-10 14:10:48', '', 'imagenes/smartphone2.png', '', '0', 1);
+INSERT INTO `recurso` (`rec_id`, `rec_tipo`, `rec_nombre`, `rec_disponibilidad`, `rec_fecha`, `rec_descripcion`, `rec_img`, `rec_incidencia`, `rec_incidencia_estado`, `rec_usado`, `usu_id`) VALUES
+(1, 'Aula de teoría', 'Aula de teoría con proyector', '1', '2017-11-10 14:10:48', '', 'teoria_pry.png', '', '0', 2, 9),
+(2, 'Aula de teoría', 'Aula de teoría con proyector', '1', '2017-11-10 14:10:48', '', 'teoria_pry.png', '', '0', 6, 9),
+(3, 'Aula de teoría', 'Aula de teoría sin proyector', '1', '2017-11-10 14:10:48', '', 'teoria.png', '', '0', 3, 9),
+(4, 'Aula de informática', 'Aula de informática', '1', '2017-11-10 14:10:48', '', 'informatica.png', '', '0', 9, 9),
+(5, 'Aula de informática', 'Aula de informática', '1', '2017-11-10 14:10:48', '', 'informatica.png', '', '0', 5, 9),
+(6, 'Sala', 'Despacho para entrevistas', '1', '2017-11-10 14:10:48', '', 'despacho.png', '', '0', 16, 9),
+(7, 'Sala', 'Despacho para entrevistas', '1', '2017-11-10 14:10:48', '', 'despacho.png', '', '0', 15, 9),
+(8, 'Sala', 'Sala de reuniones', '1', '2017-11-10 14:10:48', '', 'reuniones.png', '', '0', 0, 9),
+(9, 'Proyector', 'Proyector', '1', '2017-11-10 14:10:48', '', 'proyector.png', '', '0', 13, 9),
+(10, 'Carro de portatiles', 'Carro de portatiles', '1', '2017-11-10 14:10:48', '', 'carro.png', '', '0', 0, 9),
+(11, 'Portátil', 'Portátil', '1', '2017-11-10 14:10:48', '', 'portatil.png', '', '0', 1, 9),
+(12, 'Portátil', 'Portátil', '1', '2017-11-10 14:10:48', '', 'portatil.png', '', '0', 27, 9),
+(13, 'Portátil', 'Portátil', '1', '2017-11-10 14:10:48', '', 'portatil.png', '', '0', 7, 9),
+(14, 'Móvil', 'Móvil', '1', '2017-11-10 14:10:48', '', 'smartphone.png', '', '0', 0, 9),
+(15, 'Móvil', 'Móvil', '1', '2017-11-10 14:10:48', '', 'smartphone.png', '', '0', 4, 9);
 
 ALTER TABLE `recurso`
 ADD PRIMARY KEY (`rec_id`);
