@@ -4,12 +4,12 @@ window.onload=function(){
 
 	function mostrar(){
 		if(document.getElementById('tipo').value=='teoria'){
-			document.getElementById('span').innerHTML = '<br>Elegir con o sin proyector:<select name="subtipo"><option>Cualquiera</option><option>Con proyector</option><option>Sin proyector</option></select><br>';
+			document.getElementById('span').innerHTML = 'Elegir con o sin proyector:<select name="subtipo"><option>Cualquiera</option><option>Con proyector</option><option>Sin proyector</option></select><br>';
 		}
 		
 
 		if(document.getElementById('tipo').value=='sala'){
-			document.getElementById('span').innerHTML = '<br>Elegir tipo de sala:<select name="subtipo"><option>Cualquiera</option><option>Despacho para entrevistas</option><option>Sala de reuniones</option></select><br>';
+			document.getElementById('span').innerHTML = 'Elegir tipo de sala:<select name="subtipo"><option>Cualquiera</option><option>Despacho para entrevistas</option><option>Sala de reuniones</option></select><br>';
 		}
 
 		var valor=document.getElementById('tipo').value;
